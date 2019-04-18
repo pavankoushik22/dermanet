@@ -38,7 +38,7 @@ let model;
 (async function () {
 	
 	model = await tf.loadModel('jscript/model.json');
-	model.sumary();
+	
 	$("#selected-image").attr("src", "assets/samplepic.jpg")
 	
 	
