@@ -37,7 +37,7 @@ $("#image-selector").change(function () {
 let model;
 (async function () {
 	
-	model = await tf.loadModel('http://skin.test.woza.work/final_model_kaggle_version1/model.json');
+	model = await tf.loadModel('jscript/model.json');
 	model.sumary();
 	$("#selected-image").attr("src", "assets/samplepic.jpg")
 	
