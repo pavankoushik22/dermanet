@@ -5,6 +5,6 @@ SKIN_CLASSES = {
   3: 'Dermatofibroma (df)',
   4: 'Melanoma (mel)',
   5: 'Melanocytic Nevi (nv)',
-  6: 'Vascular skin lesion (vasc)')
+  6: 'Vascular skin lesion (vasc)'
 
 };
