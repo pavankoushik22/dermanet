@@ -5,7 +5,6 @@ function simulateClick(tabID) {
 
 function predictOnLoad() {
 	
-	// Simulate a click on the predict button
 	setTimeout(simulateClick.bind(null,'predict-button'), 500);
 };
 
@@ -23,10 +22,6 @@ $("#image-selector").change(function () {
 		reader.readAsDataURL(file);
 		
 		
-		// Simulate a click on the predict button
-		// This introduces a 0.5 second delay before the click.
-		// Without this long delay the model loads but may not automatically
-		// predict.
 		setTimeout(simulateClick.bind(null,'predict-button'), 500);
 
 });
@@ -43,10 +38,8 @@ let model;
 	
 	
 	
-	// Hide the model loading spinner
 	$('.progress-bar').hide();
 	
-	// Simulate a click on the predict button
 	predictOnLoad();
 	
 })();
@@ -62,7 +55,6 @@ $("#predict-button").click(async function () {
 	
 	let image = $('#selected-image').get(0);
 	
-	// Pre-process the image
 	let tensor = tf.fromPixels(image)
 	.resizeNearestNeighbor([224,224])
 	.toFloat();
@@ -77,17 +69,12 @@ $("#predict-button").click(async function () {
 	
 	
 	
-	// Pass the tensor to the model and call predict on it.
-	// Predict returns a tensor.
-	// data() loads the values of the output tensor and returns
-	// a promise of a typed array when the computation is complete.
-	// Notice the await and async keywords are used together.
 	let predictions = await model.predict(tensor).data();
 	let top5 = Array.from(predictions)
-		.map(function (p, i) { // this is Array.map
+		.map(function (p, i) { 
 			return {
 				probability: p,
-				className: SKIN_CLASSES[i] // we are selecting the value from the obj
+				className: SKIN_CLASSES[i] 
 			};
 				
 			
