@@ -38,4 +38,4 @@ Our model achieves the following performance on :
 
 ## Useful Links
 
-[Journal Article, Vellore Institute of Technology] (https://research.vit.ac.in/publication/derma-net-an-automated-skin-lesion-analyzer-using)
+[Journal Article, Vellore Institute of Technology](https://research.vit.ac.in/publication/derma-net-an-automated-skin-lesion-analyzer-using)
